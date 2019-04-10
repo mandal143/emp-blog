@@ -1,0 +1,66 @@
+<html>
+{% extends 'polls/base.html' %}
+
+{% block a %}
+
+<br/>
+<br/>
+
+{% load static %}
+<head>
+<link  href={% static "css/employee.css" %} rel="stylesheet">
+</head>
+
+
+<a href="{% url 'polls:form' %}"> Add New Employee </a>
+<br/>
+<br/>
+<a href="{% url 'polls:export_users_csv' %}">Download</a>
+<br/>
+<br/>
+<br/>
+{{ employee_error }}
+<br/>
+
+<table>
+    <label><font size =30,font color ="blue"><p align=left>Employee Table </p></font></label>
+    <thead>
+        <tr>
+            <th>emp_name</th>
+            <th >emp_age</th>
+            <th >emp_salary</th>
+            <th>Edit_button</th>
+            <th>Delete_button</th>
+        </tr>
+    </thead>
+    <tbody>
+    <div>
+    
+    
+    {% for employee in latest_employee_list %}
+        <tr>
+         <td>{{ employee.emp_name }}</td>
+         <td>{{ employee.emp_age }}</td>
+         <td>{{ employee.emp_salary }}</td>
+         <td><a href="{% url 'polls:employee_edit' employee.id %}"><button type="button">Edit</button> </a></td>
+         <td><a href="{% url 'polls:employee_del' employee.id %}"><button type="button">Delete</button></a></td>
+        </tr>
+    {% endfor %}
+    
+    </form>
+    
+    </div>
+    
+        
+    
+    </tbody>
+ 
+</table>
+
+
+{% endblock %}
+           
+
+
+</html>
+

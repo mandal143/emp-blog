@@ -1,0 +1,19 @@
+<html>
+{% extends 'polls/base.html' %}
+
+{% block a %}
+<br/>
+<br/>
+<body>
+<form action="{% url 'polls:employee_update' emp.id %}" method="post">
+{% csrf_token %}
+   {{ emp.id }}
+   <input type="text" name="name" value={{ emp.emp_name }}></input>
+   <input type="number" name="age" value={{ emp.emp_age }}></input>
+   <input type="number" name="salary"  value={{ emp.emp_salary }}></input>
+   <button type="submit" >save</button>
+   
+</form>
+</body>
+{% endblock %}
+</html>

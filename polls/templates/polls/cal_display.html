@@ -1,0 +1,61 @@
+<html>
+{% extends 'polls/base.html' %}
+
+{% block a %}
+
+<br/>
+<br/>
+
+
+{% load static %}
+<head>
+<link  href={% static "css/employee.css" %} rel="stylesheet">
+</head>
+
+<h2>{{ emp.emp_name }}</h2>
+
+
+<table>
+    <label><font size =30,font color ="blue"><p align=left>EVENT DETAILS </p></font></label>
+    <thead>
+        <tr>
+            <th>EVENT_NAME</th>
+            <th>NO_OF_PEOPLE</th>
+            <th>START_DATE</th>
+            <th>END_DATE</th>
+            <th>START_TIME</th>
+            <th>END_TIME</th>
+            <th>NOTES</th>
+        </tr>
+    </thead>
+    <tbody>
+    <div>
+    
+    
+    {% for event in event_list %}
+        <tr>
+         <td>{{ event.event_name }}</td>
+         <td>{{ event.no_of_people }}</td>
+         <td>{{ event.start_date }}</td>
+         <td>{{ event.end_date }}</td>
+         <td>{{ event.start_time }}</td>
+         <td>{{ event.end_time }}</td>
+         <td>{{ event.notes }}</td>
+         
+        </tr>
+    {% endfor %}
+    
+    </form>
+    
+    </div>
+    
+        
+    
+    </tbody>
+ 
+</table>
+
+{% endblock %}
+           
+</html>
+

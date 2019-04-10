@@ -1,0 +1,98 @@
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html lang="zxx">
+{% load static %}
+<head>
+	<title>login page created by prashanth</title>
+	<!-- Meta tag Keywords -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords" content="Validify Login Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements"
+	/>
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- Meta tag Keywords -->
+	<!-- css files -->
+	<link rel="stylesheet" href={% static "css/style.css" %} type="text/css" media="all" />
+	<!-- Style-CSS -->
+	<link  href={% static "css/fontawesome-all.css" %} rel="stylesheet">
+	<!-- Font-Awesome-Icons-CSS -->
+	<!-- //css files -->
+	<!-- web-fonts -->
+	<link href={% static "webfonts/nova_round.css" %} rel="stylesheet">
+	<link href={% static "webfonts/open_sans.css" %} rel="stylesheet">
+	<!-- //web-fonts -->
+</head>
+
+<body>
+	<!-- title -->
+	<h1>
+		<span>V</span>alidify
+		<span>L</span>ogin
+		<span>F</span>orm
+	</h1>
+    
+    
+    
+	<!-- //title -->
+	<!-- content -->
+    {% if error_msg %}
+    <p style="color:red">{{error_msg}}</p>
+    {% endif %}
+    <p style="color:red">{{ msg }}</p>
+	<div class="sub-main-w3">
+		<form id="demo" action="{% url 'polls:login' %}" method="post" >
+            {% csrf_token %}
+			<h2>Login To Your Account</h2>
+			<div class="form-group">
+				<input type="text" class="form-control textbox" name="email" placeholder="Username" required="">
+			</div>
+			<div class="form-group">
+				<input type="password" class="form-control textbox" name="password" placeholder="Password" required="">
+			</div>
+			<div class="form-group-2">
+				<button class="btn btn-default btn-osx btn-lg" type="submit">Submit
+				</button>
+                <button class="btn btn-default btn-osx btn-lg" type="submit">
+               <a href="{% url 'polls:register' %}">SignUp</a>
+                </button>
+			</div> 
+            
+			<div class="alert alert-success hidden" role="alert">You Have Successfully Logged In</div>
+		</form>
+       
+        
+		<!-- //switch -->
+	</div>
+	<!-- //content -->
+  
+
+	<!-- copyright -->
+	<div class="footer">
+		<p>&copy; 2018 Validify Login Form. All rights reserved | Design by
+			<a href="http://w3layouts.com">W3layouts</a>
+		</p>
+	</div>
+	<!-- //copyright -->
+     
+	<!-- Jquery -->
+	<script src={% static "js/jquery-2.2.3.min.js" %}></script>
+	<!-- //Jquery -->
+	<!-- validify plugin -->
+	
+	<!-- //validify plugin -->
+
+</body>
+
+</html>
